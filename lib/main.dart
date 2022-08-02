@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_questions/perguntas_entidade.dart';
 import './resultado.dart';
 import './questionario.dart';
 
@@ -14,36 +15,7 @@ class PerguntasApp extends StatefulWidget {
 class _PerguntasAppState extends State<PerguntasApp> {
   var _perguntaSelecionada = 0;
   var _pontuacaoTotal = 0;
-
-  final _perguntas = const [
-    {
-      'texto': 'Qual sua cor favorita?',
-      'respostas': [
-        {'texto': 'Preto', 'nota': 10},
-        {'texto': 'Vermelho', 'nota': 5},
-        {'texto': 'Verde', 'nota': 3},
-        {'texto': 'Branco', 'nota': 1},
-      ],
-    },
-    {
-      'texto': 'Qual é o seu animal favorito?',
-      'resposta': [
-        {'texto': 'Tigre', 'nota': 10},
-        {'texto': 'Cobra', 'nota': 5},
-        {'texto': 'Hiena', 'nota': 3},
-        {'texto': 'Leão', 'nota': 1},
-      ],
-    },
-    {
-      'texto': 'Qual é o seu heroi favorito?',
-      'resposta': [
-        {'texto': 'Homem-Aranha', 'nota': 10},
-        {'texto': 'Capitão-Caverna', 'nota': 5},
-        {'texto': 'Pantera-Cor-Rosa', 'nota': 3},
-        {'texto': 'As-Trigemeas', 'nota': 1},
-      ],
-    },
-  ];
+  final List<Map<String, dynamic>> _perguntas = PerguntaEntidade().obterPerguntas();
 
   void _responder(int nota) {
     if (temPerguntaSelecionada) {

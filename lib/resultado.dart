@@ -31,6 +31,7 @@ class Resultado extends StatelessWidget {
           ),
         ),
         TextButton(
+          onPressed: quandoReiniciarQuestionario,
           child: const Text(
             'Reiniciar?',
             style: TextStyle(
@@ -38,7 +39,6 @@ class Resultado extends StatelessWidget {
               color: Colors.blue,
             ),
           ),
-          onPressed: quandoReiniciarQuestionario,
         )
       ],
     );
